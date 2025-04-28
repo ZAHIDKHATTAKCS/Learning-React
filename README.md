@@ -76,70 +76,146 @@ npx create-react-app my-app
 - class component are not that used while the function component is more usable than class component
 - the facebook team said may be later on the class component will remove from react like that 
 
-### Use Multiple Components in a single page 
+## 🎯 Use Multiple Components in a Single Page 🚀
 
-- yes we can use like the a function in a main function like if our main function is App and we create new functions inside it and return a data so whenever the main function called this component will also run with it 
+- ✅ Yes, we can use multiple components like functions inside a main function.
+- ✅ For example, if our main function is `App`, we can create new functions inside it and return data.
+- ✅ So whenever the main function is called, the component inside it will also run automatically.
 
-### JSX with React
+## 📚 JSX with React
 
-- JSX stand for JavaScript XML
-- earlier we can't use javascript along with html for script we used script tag but now in JSX we can use both in one file.
-- write JavaScript and HTML together in react is called JSX and JSX install with React application
+- JSX stands for **JavaScript XML** 📄.
+- Earlier, we couldn't use JavaScript along with HTML; we used a `<script>` tag separately.
+- Now, in JSX, we can write JavaScript and HTML together in one file 🎨.
+- JSX is installed automatically when creating a React app.
 
+## 🖱️ Click Event and Function
 
-### Click Event and Function
+- In plain JavaScript, `onclick` is used like:
 
-- when we use onclick function if we define a function and add alert or something else there so by default in JavaScript we use like 
-  
-```javascript
-onclick="apple()"
-```
-
-- but in the JSX we have to use like
-  
-  ```javascript
-  onclick="{apple}"
+  ```html
+  onclick="apple()"
   ```
 
-  - this will called properly in JSX 
-  - if someone wants directly write function code there in the onclick="" so they have to use arrow function so it will work properly 
-
-### State in React
-
-- state is like object like variable where we can store data 
-- for using state we must have to import the useState in the start of the file 
-- useState is a Hook that allow us to use state and maintained state and update the state
-
-
-### Props in React
-
-- **Props** in react like functions where we passed data as an arguments this is like this if we want to create a component and want to pass data so we can use **props**
-- **Props** are basically used to pass data from one component to another component in React
-- **Props** stands for Properties. you can imagine , props are like arguments but actually its not arguments but you can imagine.
-- **Note** always keep in mind that the data you are want to pass should be passed from parent to the child component in all the cases parent component is **App.js**
-- we can pass multiple props using single component and we can pass. 
-
-### How to get input value in React :
-
-- to get value in react we have to create a function that get value from specific input field and whatever you want if you want onChange so use onchange or onclick and the function must have parameter of a variable like val and than print the value in the function body using 
+- In **JSX**, it is used like:
 
   ```javascript
-   console.log (val.target.value)
+  onClick={apple}
+  ```
 
-    // here val is the parameter of the function 
+- ✅ If you want to write the function directly inside `onClick`, use an **arrow function**:
 
-   // target: Refers to the HTML element that triggered the event. For example, an <input> element.
+  ```javascript
+  onClick={() => alert('Clicked!')}
+  ```
 
-   // value: The current value of that element (e.g., what the user typed in an input box).
-  ``` 
+## 🔥 State in React
 
-### how to update Props 
+- **State** is like a variable where we store data 💾.
+- To use **state**, import `useState` at the beginning of the file:
 
-- to update the Props you need to use the **useState** of react.
+  ```javascript
+  import { useState } from 'react';
+  ```
 
+- `useState` is a **Hook** that helps to maintain and update state in a functional component.
 
+## 📦 Props in React
+
+- **Props** are used to pass data from **parent** ➡️ **child** components.
+- Props stands for **Properties** 📬.
+- Always remember, props are passed **top to bottom** (parent to child).
+- In most cases, the parent component is `App.js`.
+- ✅ You can pass multiple props easily.
+
+## ✍️ How to Get Input Value in React
+
+- To get an input value, create a function and use `onChange`:
+
+  ```javascript
+  function getValue(val) {
+    console.log(val.target.value);
+  }
+  ```
+
+- 📖 Explanation:
+  - `target`: Refers to the HTML element that triggered the event.
+  - `value`: The current value of that element.
+
+## 🔄 How to Update Props
+
+- ❗ You **cannot directly update props**.
+- Instead, use `useState` at the parent component to manage the data and then pass it down via props.
+
+## 🧬 What is Lifecycle in React
+
+- Lifecycle is similar to human life: **Birth**, **Update (Young Age)**, **Death** ⚡.
+- Three main stages:
+  - **Mounting** (Component is created)
+  - **Updating** (Component updates)
+  - **Unmounting** (Component is removed)
+- 🔥 Lifecycle methods work mainly in **Class Components**.
+
+## 🛠️ Constructor in Lifecycle in React
+
+- **Constructor** is a special method used inside class components to initialize the state and bind methods.
+
+## 🔃 Render Lifecycle in React
+
+- The `render()` method is called:
+  - When the component is ready 🛠️.
+  - When the state updates 🔥.
+  - When props update 🎯.
+
+## 🚀 ComponentDidMount
+
+- **ComponentDidMount** is used to call **APIs** after the component is rendered.
+
+  ```javascript
+  componentDidMount() {
+    // API calls or side-effects
+  }
+  ```
+
+- ✅ It runs **only once** after the component mounts.
+
+## 🔁 ComponentDidUpdate
+
+- **ComponentDidUpdate** runs when the component's **state** or **props** update.
+
+  ```javascript
+  componentDidUpdate(prevProps, prevState) {
+    // Respond to state or prop changes
+  }
+  ```
+
+## 🧩 Hooks in React
+
+- Hooks are functions that let you "hook into" React features.
+- ➡️ Anything that starts with `use` is a Hook, e.g., `useState`, `useEffect`, etc.
+- ✅ To use Lifecycle behavior in **Functional Components**, we use the `useEffect` Hook.
+
+## 🔥 useEffect Hook in React
+
+- `useEffect` always takes a function as its first argument:
+
+  ```javascript
+  import { useEffect } from 'react';
+
+  useEffect(() => {
+    // Code to run after every render
+  }, [dependencies]);
+  ```
+
+- 📌 Key Points:
+  - Runs after every render by default.
+  - You can control it to run only when **specific state** or **props** change.
+  - If you pass an empty dependency array `[]`, it will run **only once** after mount.
+  - You can specify dependencies inside the array to control its behavior 🎯.
 
 ---
+
+
 
 ### ❓ Questions
 
