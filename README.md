@@ -213,6 +213,64 @@ npx create-react-app my-app
   - If you pass an empty dependency array `[]`, it will run **only once** after mount.
   - You can specify dependencies inside the array to control its behavior 🎯.
 
+### 🎨 Style in React
+
+- The one that is normal CSS like `style.css` in React folder structure.
+- In React, we can also use inline style like this:  
+  **`style={{ color: "red", backgroundColor: "yellow" }}`** etc.
+
+---
+
+### 📦 Install Bootstrap in React
+
+- Go to **[React Bootstrap link](https://react-bootstrap.netlify.app/docs/getting-started/introduction#:~:text=npm%20install%20react%2Dbootstrap%20bootstrap)**  
+- Copy the installation command and run it in your terminal.  
+- After that go to **[CSS Link](https://react-bootstrap.netlify.app/docs/getting-started/introduction#:~:text=%7B%0A%20%20/*%20The%20following%20line%20can%20be%20included%20in%20your%20src/index.js%20or%20App.js%20file%20*/%0A%7D%0Aimport%20%27bootstrap/dist/css/bootstrap.min.css%27%3B)** and paste this code in `index.js` file.  
+- After this, check how you can use Bootstrap components in React on the **React Bootstrap Website**.
+
+---
+
+### 🧾 Handle Array with List
+
+- `map` function is used for showing arrays in React.  
+- `map` is a function that takes another function as a parameter.  
+- It is supported by React inside `return` (unlike `for` loops).  
+- If we use a table inside `map`, we will get a console error for a **missing unique key**.  
+  - This is because the Virtual DOM needs a unique key to know what to update.  
+  - So, we must pass a unique key when rendering list elements.
+
+---
+
+### 🧩 React Fragment
+
+- **React Fragment** is a pattern to handle multiple components or elements.
+- It is used to wrap multiple JSX elements without adding extra DOM nodes.
+
+```jsx
+import React, { Fragment } from 'react';
+
+<Fragment>
+  {/* Wrap your elements here */}
+</Fragment>
+```
+
+```jsx
+<React.Fragment>
+  {/* Code here */}
+</React.Fragment>
+
+<></>  {/* Shorthand version */}
+```
+
+- if you using proper ReactFragment it will better if you create a table in one component and other part of table like tbody of that table in other component where you wrapped the content in the div so it will through error in console.log
+
+
+### ⚡ UseMemo
+
+- This is an important Hook that enhances your application’s performance.
+
+- It is like the PureComponent functionality in class-based React.
+
 ---
 
 
@@ -264,3 +322,6 @@ it will start the project
 #### 📖 Can we use JSX without React 
 
 - yes we can use JSX without React there is a file extension .jsx through which we can use the JSX without Installing React   
+
+
+**Note** we should create all the function in React main file like App.js and pass it through the props to other component if you want to call it in other component its because it will slow down your app
