@@ -271,6 +271,37 @@ import React, { Fragment } from 'react';
 
 - It is like the PureComponent functionality in class-based React.
 
+### UseRef in ReactJs
+
+- **useRef** is the special component in Reactjs that can be use only on functional component
+
+- **useRef** its a React Hook, when we need to manipulate DOM we have to use **useRef**
+
+- in simple words if we want to style a specific element on event like onclick or onchange so we can use **useRef**
+
+### forwardRef
+
+- as we know about we can style and manipulate the element using useRef what if we want to style an element that is in another component.
+
+- as per we can forward message we can also forward a Ref
+
+### Controlled Components
+
+- when we controlled the input field using state in react that is called **Controlled Components**
+
+
+### unControlled Components
+
+- all the components are called unControlled components that having input fields that are not controlled by the react hook useState.
+
+### HOC - Hight Order Component
+
+- **HOC** is a component that takes a second component is a props and a return a separate component.
+
+- in simple words a component that takes a component as an input and show it as an output
+
+
+
 ---
 
 
